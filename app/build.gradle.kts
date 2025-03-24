@@ -54,4 +54,7 @@ dependencies {
 
     implementation ("com.github.ibrahimsn98:SmoothBottomBar:1.7.9")
 
+
+    implementation ("com.github.ybq:Android-SpinKit:1.4.0")
+
 }
