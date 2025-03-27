@@ -26,7 +26,7 @@
         android:layout_height="56dp"
         app:iconSize="24dp"
         app:backgroundColor="@color/blue"
-        app:badgeColor="@color/colorBadge"
+
         app:indicatorRadius="8dp"
         app:iconMargin="8dp"
         android:elevation="12dp"
