@@ -72,7 +72,7 @@ class TopLossGainFragment : Fragment() {
                         for (i in 0..9){
                             list.add(dataItem?.get(i)!!)
 
-                            topLossGainFragment.topGainLoseRecyclerView.adapter=MarketAdapter(requireActivity(),list)
+                            topLossGainFragment.topGainLoseRecyclerView.adapter=MarketAdapter(requireActivity(),list,"home")
 
 
                         }
@@ -81,7 +81,7 @@ class TopLossGainFragment : Fragment() {
                         for (i in 0..9){
                             list.add(dataItem?.get(dataItem.size-1-i)!!)
 
-                            topLossGainFragment.topGainLoseRecyclerView.adapter=MarketAdapter(requireActivity(),list)
+                            topLossGainFragment.topGainLoseRecyclerView.adapter=MarketAdapter(requireActivity(),list,"home")
 
 
                         }

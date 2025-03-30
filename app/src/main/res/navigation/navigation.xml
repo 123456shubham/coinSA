@@ -18,12 +18,20 @@
         android:id="@+id/market_fragment"
         android:name="com.example.coinsa.MarketFragment"
         android:label="fragment_market"
-        tools:layout="@layout/fragment_market" />
+        tools:layout="@layout/fragment_market" >
+        <action
+            android:id="@+id/action_market_fragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/watchList_fragment"
         android:name="com.example.coinsa.WatchListFragment"
         android:label="fragment_watch_list"
-        tools:layout="@layout/fragment_watch_list" />
+        tools:layout="@layout/fragment_watch_list" >
+        <action
+            android:id="@+id/action_watchList_fragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.coinsa.DetailsFragment"

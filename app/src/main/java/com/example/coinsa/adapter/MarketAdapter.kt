@@ -8,11 +8,12 @@ import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.coinsa.HomeFragmentDirections
+import com.example.coinsa.MarketFragmentDirections
 import com.example.coinsa.R
 import com.example.coinsa.databinding.CurrencyItemLayoutBinding
 import com.example.coinsa.model.CryptoCurrency
 
-class MarketAdapter(val context: Context, val list: List<CryptoCurrency>) : RecyclerView.Adapter<MarketAdapter.ViewModel>() {
+class MarketAdapter(val context: Context, var list: List<CryptoCurrency>,val type:String) : RecyclerView.Adapter<MarketAdapter.ViewModel>() {
 
     inner  class  ViewModel (view: View): RecyclerView.ViewHolder(view){
 
@@ -42,12 +43,24 @@ class MarketAdapter(val context: Context, val list: List<CryptoCurrency>) : Recy
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor(R.color.red))
             holder.binding.currencyChangeTextView.text=" ${String.format("%.02f",item.quotes[0]!!.percentChange24h)} %"
         }
+
+
         holder.itemView.setOnClickListener {
-            findNavController(it).navigate(HomeFragmentDirections.actionHomeFragmentToDetailsFragment(item))
+            if (type=="home"){
+                findNavController(it).navigate(HomeFragmentDirections.actionHomeFragmentToDetailsFragment(item))
+
+            }else if (type=="market"){
+                findNavController(it).navigate(MarketFragmentDirections.actionMarketFragmentToDetailsFragment(item))
+            }
         }
     }
 
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    fun updateData(dataItem: List<CryptoCurrency>){
+        list=dataItem
+        notifyDataSetChanged()
     }
 }
