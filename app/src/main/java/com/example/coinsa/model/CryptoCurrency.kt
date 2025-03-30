@@ -1,5 +1,7 @@
 package com.example.coinsa.model
 
+import java.io.Serializable
+
 data class CryptoCurrency(
     val auditInfoList: List<AuditInfo?>?,
     val badges: List<String?>?,
@@ -20,4 +22,16 @@ data class CryptoCurrency(
     val symbol: String?,
     val tags: List<String?>?,
     val totalSupply: String?
-)
+):Serializable{
+    override fun toString(): String {
+        return super.toString()
+    }
+
+    override fun hashCode(): Int {
+        return super.hashCode()
+    }
+
+    override fun equals(other: Any?): Boolean {
+        return super.equals(other)
+    }
+}

@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.coinsa.HomeFragmentDirections
 import com.example.coinsa.R
 import com.example.coinsa.databinding.CurrencyItemLayoutBinding
 import com.example.coinsa.model.CryptoCurrency
@@ -39,6 +41,9 @@ class MarketAdapter(val context: Context, val list: List<CryptoCurrency>) : Recy
         }else{
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor(R.color.red))
             holder.binding.currencyChangeTextView.text=" ${String.format("%.02f",item.quotes[0]!!.percentChange24h)} %"
+        }
+        holder.itemView.setOnClickListener {
+            findNavController(it).navigate(HomeFragmentDirections.actionHomeFragmentToDetailsFragment(item))
         }
     }
 
